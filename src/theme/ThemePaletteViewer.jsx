@@ -54,7 +54,7 @@ export default function ThemePaletteGroupedByKey() {
 
   return (
     <Box sx={{ p: 4 }}>
-      <Box sx={{ display: "flex", dispatch: "flex", gridGap: "12px" }}>
+      <Box sx={{ display: "flex", gridGap: "12px", mb: 2 }}>
         <Button
           size="small"
           variant="outlined"
@@ -70,10 +70,10 @@ export default function ThemePaletteGroupedByKey() {
       </Box>
 
       {sortedKeys.map((key) => (
-        <Box key={key} sx={{ mt: 4 }}>
+        <Box key={key} sx={{ mt: 1 }}>
           <Typography
             variant="subtitle1"
-            sx={{ mb: 2, textTransform: "capitalize" }}
+            sx={{ mb: 1, textTransform: "capitalize" }}
           >
             {key}
           </Typography>
@@ -81,12 +81,13 @@ export default function ThemePaletteGroupedByKey() {
             {Object.entries(grouped[key]).map(([variant, value]) => (
               <Grid item xs={12} sm={6} md={4} key={variant}>
                 <Paper
-                  elevation={2}
+                  elevation={1}
                   sx={{
-                    p: 2,
+                    p: 1,
                     display: "flex",
                     alignItems: "center",
-                    border: `1px solid ${value}`,
+                    border: `2px solid ${value}`,
+                    borderRadius: 2,
                   }}
                 >
                   <Box
@@ -95,17 +96,16 @@ export default function ThemePaletteGroupedByKey() {
                       height: 32,
                       borderRadius: 1,
                       background: value,
-                      mr: 2,
+                      mr: 1,
                     }}
                   />
-                  <Typography sx={{ fontFamily: "monospace" }}>
+                  <Typography>
                     {variant}: <b>{value}</b>
                   </Typography>
                 </Paper>
               </Grid>
             ))}
           </Grid>
-          <Divider sx={{ mt: 3 }} />
         </Box>
       ))}
     </Box>

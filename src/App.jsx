@@ -1,10 +1,12 @@
-import ThemePaletteViewer from "./theme/ThemePaletteViewer";
+import router from "./Router";
+import { RouterProvider } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <ThemePaletteViewer />
-    </>
+    <div>
+      {/* <my-mfe-page name="React User" /> */}
+      <RouterProvider router={router} />
+    </div>
   );
 }
 
